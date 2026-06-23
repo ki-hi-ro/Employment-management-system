@@ -1,45 +1,82 @@
-# Employment Management System
+# 従業員管理システム
 
-A lightweight, file-based employment management CLI for registering employees and tracking daily attendance.
+従業員の登録と日々の勤怠管理を行うための、軽量なファイルベースのCLI（コマンドライン）アプリケーションです。
 
-## Features
-- Register employees with department and role information.
-- List all employees.
-- Clock employees in and out with timestamps.
-- View attendance records for today or a specific date.
+## 主な機能
 
-## Getting started
-This tool only relies on the Python standard library. Use Python 3.10+.
+* 部署や役職情報を含めて従業員を登録
+* 登録済みの従業員一覧を表示
+* 出勤・退勤時刻を記録
+* 当日または指定日の勤怠記録を確認
+
+## はじめに
+
+このツールは Python の標準ライブラリのみを使用しており、追加ライブラリのインストールは不要です。
+
+Python 3.10 以上を使用してください。
 
 ```bash
 python employment_cli.py --help
 ```
 
-### Register an employee
+## 従業員を登録する
+
+例：営業部のアカウントマネージャーとして「Alice Example」を登録します。
+
 ```bash
 python employment_cli.py add-employee "Alice Example" Sales "Account Manager"
 ```
 
-### List employees
+## 従業員一覧を表示する
+
 ```bash
 python employment_cli.py list
 ```
 
-### Clock in / Clock out
+## 出勤・退勤を記録する
+
+従業員IDが「1」の場合
+
+### 出勤
+
 ```bash
 python employment_cli.py clock-in 1
+```
+
+### 退勤
+
+```bash
 python employment_cli.py clock-out 1
 ```
 
-### Attendance report
-Show today's attendance:
+## 勤怠レポートを表示する
+
+### 本日の勤怠を表示
+
 ```bash
 python employment_cli.py report
 ```
 
-Or for a specific date:
+### 特定日の勤怠を表示
+
+例：2024年8月1日の勤怠を表示します。
+
 ```bash
 python employment_cli.py report --date 2024-08-01
 ```
 
-Employee and attendance data are stored at `data/employees.json` in JSON format for easy portability.
+## データ保存場所
+
+従業員情報と勤怠データは以下のファイルにJSON形式で保存されます。
+
+```text
+data/employees.json
+```
+
+JSON形式で保存されるため、データの移行やバックアップが容易です。
+
+## アプリ概要
+
+このシステムは、従業員の登録・出勤・退勤・勤怠確認を行うためのCLIアプリケーションです。
+
+Python標準ライブラリのみで実装されており、データはJSONファイルで管理しています。
