@@ -19,6 +19,22 @@ Python 3.10 以上を使用してください。
 python employment_cli.py --help
 ```
 
+## ブラウザで利用する
+
+以下のコマンドでWebアプリを起動できます。
+
+```bash
+python web_app.py
+```
+
+起動後、ブラウザで以下にアクセスしてください。
+
+```text
+http://127.0.0.1:8000
+```
+
+ブラウザ版でもCLIと同じ `data/employees.json` にデータを保存します。
+
 ## 従業員を登録する
 
 例：営業部のアカウントマネージャーとして「Alice Example」を登録します。

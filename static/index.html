@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>従業員管理システム</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Employment Manager</p>
+        <h1>従業員管理システム</h1>
+      </div>
+      <div class="today" id="todayLabel"></div>
+    </header>
+
+    <main class="app-shell">
+      <section class="panel register-panel">
+        <div class="panel-heading">
+          <h2>従業員登録</h2>
+        </div>
+        <form id="employeeForm" class="form-grid">
+          <label>
+            氏名
+            <input name="name" type="text" autocomplete="name" required />
+          </label>
+          <label>
+            部署
+            <input name="department" type="text" required />
+          </label>
+          <label>
+            役職
+            <input name="role" type="text" required />
+          </label>
+          <button type="submit">登録</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>従業員一覧</h2>
+          <span id="employeeCount" class="count">0名</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>氏名</th>
+                <th>部署</th>
+                <th>役職</th>
+                <th>勤怠</th>
+              </tr>
+            </thead>
+            <tbody id="employeeRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>勤怠レポート</h2>
+          <form id="reportForm" class="date-form">
+            <input id="reportDate" type="date" />
+            <button type="submit">表示</button>
+          </form>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>従業員ID</th>
+                <th>出勤</th>
+                <th>退勤</th>
+                <th>状態</th>
+              </tr>
+            </thead>
+            <tbody id="reportRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
